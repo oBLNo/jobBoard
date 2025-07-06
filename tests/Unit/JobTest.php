@@ -20,4 +20,14 @@ class JobTest extends TestCase
 
         $this->assertTrue($job->employer->is($employer));
     }
+
+    public function test_post_has_tag(): void
+    {
+        $job = Job::factory()->create();
+
+        $job->addTag('Frontend');
+
+        $this->assertEquals($job->tag)->toHaveCount(1);
+
+    }
 }
