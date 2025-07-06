@@ -18,7 +18,7 @@ class JobTest extends TestCase
             'employer_id' => $employer->id,
         ]);
 
-        $this->assertTrue($job->employer->is($employer));
+        $this->assertSame($employer->id, $job->employer->id);
     }
 
     public function test_post_has_tag(): void
@@ -27,7 +27,6 @@ class JobTest extends TestCase
 
         $job->addTag('Frontend');
 
-        $this->assertEquals($job->tag)->toHaveCount(1);
-
+        $this->assertCount(1, $job->tags);
     }
 }
