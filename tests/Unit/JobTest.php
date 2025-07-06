@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use App\Models\Employer;
 use App\Models\Job;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase; // ✅ das hier ist wichtig
+use Tests\TestCase;
 
 class JobTest extends TestCase
 {
