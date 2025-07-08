@@ -25,7 +25,7 @@ class JobTest extends TestCase
     {
         $job = Job::factory()->create();
 
-        $job->addTag('Frontend');
+        $job->tag('Frontend');
 
         $this->assertCount(1, $job->tags);
     }

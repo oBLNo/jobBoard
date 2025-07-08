@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
+ * @property \App\Models\Employer $employer
+ */
 class Job extends Model
 {
     use HasFactory;
@@ -16,7 +20,7 @@ class Job extends Model
         return $this->belongsTo(Employer::class);
     }
 
-    public function addTag(string $name): void
+    public function tag(string $name): void
     {
         $tag = Tag::firstOrCreate(['name' => $name]);
 

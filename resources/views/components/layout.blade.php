@@ -12,7 +12,7 @@
 <div class="px-10">
     <nav class="flex justify-between items-center py-4 border-b border-white/10">
         <div>
-            <a href="">
+            <a href="/">
                 <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
             </a>
         </div>
@@ -25,8 +25,15 @@
         </div>
 
         @auth
-            <div>
+            <div class="space-x-6 font-bold flex">
                 <a href="/jobs/create">Post a Job</a>
+
+                <form method="POST" action="/logout">
+                    @csrf
+                    @method('DELETE')
+
+                    <button>Log Out</button>
+                </form>
             </div>
         @endauth
 
